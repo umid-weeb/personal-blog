@@ -1,58 +1,48 @@
-[
-  "projects": {
-        "1": {
-            "title": "_ui-animations",
-            "description": "Duis aute irure dolor in velit esse cillum dolore.",
-            "img": "/images/projects/ui-animations2.png",
-            "tech": [
-                "Flutter"
-            ],
-            "url": "https://github.com/"
-        },
-        "2": {
-            "title": "_ai-resources",
-            "description": "Duis aute irure dolor in velit esse cillum dolore.",
-            "img": "/images/projects/ai-resources.png",
-            "tech": [
-                "Gatsby"
-            ],
-            "url": "https://github.com/"
-        },
-        "3": {
-            "title": "_worldmap",
-            "description": "Duis aute irure dolor in velit esse cillum dolore.",
-            "img": "/images/projects/worldmap.png",
-            "tech": [
-                "Angular"
-            ],
-            "url": "https://github.com/"
-        },
-        "4": {
-            "title": "_ui-animations",
-            "description": "Duis aute irure dolor in velit esse cillum dolore.",
-            "img": "/images/projects/ui-animations.png",
-            "tech": [
-                "React"
-            ],
-            "url": "https://github.com/"
-        },
-        "5": {
-            "title": "_tetris-game",
-            "description": "Duis aute irure dolor in velit esse cillum dolore.",
-            "img": "/images/projects/tetris-game.png",
-            "tech": [
-                "React"
-            ],
-            "url": "https://github.com/"
-        },
-        "6": {
-            "title": "_ethereum",
-            "description": "Duis aute irure dolor in velit esse cillum dolore.",
-            "img": "/images/projects/ethereum.png",
-            "tech": [
-                "Vue"
-            ],
-            "url": "https://github.com/"
-        }
+{
+    "owner": "Isroilov Ibroximjon",
+    "projects": {
+      "1": {
+        "title": "UI Animations",
+        "description": "Isroilov Ibroximjon tomonidan yaratilgan ajoyib UI animatsiyalar loyihasi.",
+        "img": "/azamjonbro-site/public/krinj.png",
+        "tech": ["Python"],
+        "url": "https://github.com/"
+      },
+      "2": {
+        "title": "AI Resources",
+        "description": "Ibroximjon tomonidan yig'ilgan sun'iy intellekt bo'yicha foydali resurslar.",
+        "img": "/images/projects/ai-resources.png",
+        "tech": ["Gatsby"],
+        "url": "https://github.com/"
+      },
+      "3": {
+        "title": "World Map",
+        "description": "Dunyo xaritasi bilan ishlovchi interaktiv loyiha — Ibroximjon.",
+        "img": "/images/projects/worldmap.png",
+        "tech": ["Angular"],
+        "url": "https://github.com/"
+      },
+      "4": {
+        "title": "UI Animations React",
+        "description": "React yordamida qilingan UI animatsiyalar loyihasi. Muallif: Ibroximjon.",
+        "img": "/images/projects/ui-animations.png",
+        "tech": ["React"],
+        "url": "https://github.com/"
+      },
+      "5": {
+        "title": "Tetris Game",
+        "description": "React orqali yozilgan Tetris o'yini. Ibroximjon tomonidan ishlab chiqilgan.",
+        "img": "/images/projects/tetris-game.png",
+        "tech": ["React"],
+        "url": "https://github.com/"
+      },
+      "6": {
+        "title": "Ethereum Dashboard",
+        "description": "Ethereum blockchain ko‘rsatkichlarini kuzatish uchun Vue loyihasi.",
+        "img": "/images/projects/ethereum.png",
+        "tech": ["Vue"],
+        "url": "https://github.com/"
+      }
     }
-]
+  }
+  

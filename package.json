@@ -9,6 +9,9 @@
     "test": "vitest"
   },
   "devDependencies": {
+    "@types/estree": "^1.0.8",
+    "@types/http-proxy": "^1.17.17",
+    "@types/node": "^25.0.0",
     "nuxt": "^3.15.4",
     "vitest": "^3.0.7"
   },

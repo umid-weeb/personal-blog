@@ -1,16 +1,16 @@
 {
-    "name": "Azamjon Abdullayev",
-    "logo_name": "Azamonbro",
-    "role": "Front-end engineer",
+    "name": "Ibroximjon Isroilov",
+    "logo_name": "Umid's blog",
+    "role": "Software engineer",
     "about": {
         "sections": {
             "professional-info": {
                 "title": "professional-info",
-                "icon": "icons/info-professional.svg",
+                "icon": "icons/gist/krinj.png",
                 "info": {
                     "experience": {
                         "title": "experience",
-                        "description": "Frontend Developer at Ubay Tools MCHJ (2022–2023): Developed a full-featured e-commerce platform using React.js. Built a Telegram Bot Web App using Node.js. Focused on responsive UI and API integration. Frontend Engineer at Alpha Electronics (2023): Created a custom CRM using Vue.js and a cross-platform Electron app for power monitoring. Mentor at Algoritm Education Center (Present): Teaching Vue and React through hands-on, project-based lessons."
+                        "description": " Men Isroilov Ibroximjon, Front-end va Software dasturchiman va hozirda PDP Universityda o'qiman va shu sohada o'z bilimlarimni oshirib bormoqdaman. Sizga kerak bo'lgan har qandan biror dasturiy ta'minot yoki web sayt bo'lsa men bilan bog'lanishingiz mumkin."
                     },
                     "hard-skills": {
                         "title": "hard-skills",
@@ -28,18 +28,18 @@
                 "info": {
                     "bio": {
                         "title": "bio",
-                        "description": "<br> About me <br> Hi, I’m Azamjon Abdullayev — a passionate front-end developer, mentor, and creative problem solver. I specialize in Vue.js, Electron.js, and React.js, building high-performance web and desktop applications with clean, minimal, and efficient code.  Over the years, I’ve developed custom CRMs, IoT-based monitoring systems, and Telegram bot integrations — all tailored for real-world users and cross-platform compatibility. I focus on speed, security, and user-friendly design, avoiding unnecessary libraries to keep things lightweight and reliable."
+                        "description": "<br> About me <br> Hi, I’m Ibroximjon Isroilov — a passionate new front-end developer, and creative problem solver. I specialize in and React.js,bootstapt, tailwind and efficient code.  Over the months, I’ve learn front-end, IoT-based monitoring systems, and Telegram bot integrations — all tailored for real-world users and cross-platform compatibility. I focus on speed, security, and user-friendly design, avoiding unnecessary libraries to keep things lightweight and reliable."
                     },
                     "interests": {
                         "title": "interests",
-                        "description": "<br> I'm deeply interested in clean UI/UX design, performance optimization, and building apps that solve real problems — not just look good. I enjoy crafting smooth, cross-platform desktop applications with Electron.js, especially when there's a challenge to support everything from Windows 7 to modern macOS.Outside of coding, I'm fascinated by automation, data visualization, and creating internal tools that improve workflows. I also enjoy teaching and mentoring — helping others understand not just how to code, but why things work the way they do. In my free time, I explore JavaScript internals, low-level browser behavior, and new trends in front-end architecture. I believe the best developers are lifelong learners — and I’m always curious to dig deeper."
+                        "description": "<br> I'm deeply interested in problem solving, performance optimization, and building bot that solve real problems — not just look good. I believe the best developers are lifelong learners — and I’m always curious to dig deeper."
                     },
                     "education": {
                         "title": "education",
                         "description": "<br>I hold a solid foundation in computer science and front-end development, supported by both academic and hands-on experience. I’ve continuously expanded my knowledge through real-world projects, advanced online courses, and by mentoring others in the field. While formal education gave me the basics, most of my skills were shaped by building actual applications — from custom CRMs and IoT dashboards to cross-platform Electron apps and Telegram bots. I believe in learning by doing, and my strongest education has come from solving real problems with clean code, smart design, and modern frameworks.",
                         "files": {
                             "high-school": "I have been in 'Las viñas'...",
-                            "university": "The university..."
+                            "university": "The PDP university "
                         }
                     }
                 }
@@ -64,25 +64,25 @@
         "direct": {
             "title": "contacts",
             "sources": {
-                "email": "azamjonbro@gmail.com",
-                "phone": "+998770057891"
+                "email": "isroilov0705@gmail.com",
+                "phone": "+998907913633"
             }
         },
         "social": {
             "github": {
                 "title": "Github profile",
-                "url": "https://github.com/",
-                "user": "azamjonbro"
+                "url": "https://github.com/umid-weeb",
+                "user": "umid-weeb"
             },
             "facebook": {
-                "title": "Facebook profile",
-                "url": "https://facebook.com/",
-                "user": "azamjonbro"
+                "title": "LinkedIN",
+                "url": "https://www.linkedin.com/in/ibrohim-isroilov-96945536b/",
+                "user": "Isroilov"
             },
             "twitter": {
-                "title": "Twitter account",
-                "url": "https://twitter.com/",
-                "user": "azamjonbro"
+                "title": "Twitter",
+                "url": "https://t.me/pdp338",
+                "user": "Isroilov"
             }
         },
         "find_me_also_in": {
@@ -90,23 +90,23 @@
             "sources": {
                 "youtube": {
                     "title": "YouTube channel",
-                    "url": "https://www.youtube.com/",
-                    "user": "@azamjonbro"
+                    "url": "https://www.youtube.com/@umid_4K",
+                    "user": "@umid_4K"
                 },
                 "gurushots": {
-                    "title": "GuruShots profile",
-                    "url": "https://gurushots.com/",
-                    "user": "azamjonbro"
+                    "title": "Telegram blog",
+                    "url": "https://t.me/pdp_60",
+                    "user": "umid-weeb"
                 },
                 "instagram": {
                     "title": "Instagram account",
-                    "url": "https://instagram.com/",
-                    "user": "azamjonbro"
+                    "url": "https://www.instagram.com/pdp_senior?igsh=NHBzZHlsbWFkM2Ni&utm_source=qr",
+                    "user": "umid-weeb"
                 },
                 "twitch": {
-                    "title": "Twitch profile",
-                    "url": "https://twitch.com/",
-                    "user": "azamjonbro"
+                    "title": "My prject",
+                    "url": "https://www.pyzone.uz",
+                    "user": "umid-weeb"
                 }
             }
         }
