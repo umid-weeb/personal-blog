@@ -16,7 +16,7 @@
     "vitest": "^3.0.7"
   },
   "dependencies": {
-    "@highlightjs/vue-plugin": "highlightjs/vue-plugin",
+    "@highlightjs/vue-plugin": "github:highlightjs/vue-plugin",
     "@nuxtjs/tailwindcss": "^6.13.1",
     "aos": "^2.3.4",
     "highlight.js": "^11.7.0"
