@@ -1,8 +1,8 @@
 <h1 align="center">Add commentMore actions
-  Azamjonbro Portfolio
+  Isroilov Ibroximjon
 </h1>
 <p align="center">
-  The first open source version of and developed by <a href="https://github.com/azamjonbro">@azamjonbro</a>. Built with <a href="https://nuxt.com/" target="_blank">Nuxt.js 3.0</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>.
+  The first open source version of and developed by <a href="https://github.com/umid_weeb">@umid_weeb</a>. Built with <a href="https://nuxt.com/" target="_blank">Nuxt.js 3.0</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>.
 </p>
 <div align="center">
 
@@ -63,4 +63,4 @@ The portfolio template includes some default content, but you can easily customi
 yarn build
 ```
 
-2. Preview the site as it will appear once deployed.
+2. Preview the site as it will appear once deployed.# personal-blog
