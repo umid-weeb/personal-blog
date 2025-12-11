@@ -13,7 +13,7 @@
 
 ## 🚨 Forking this repo
 
-Feel free to fork this repository and make it your own! You can use it as a starting point for your own portfolio website. However, please note that the effort and time deserves to be recognized and *plagiarism is a bad practice*. If you use this project, we would greatly appreciate it if you give credits to the designer <a href="https://github.com/azamjonbro/azamjonbro-site" target="_blank">@darelova</a> and the developer <a href="https://github.com/azamjonbro/azamjonbro-site">@azamjonbro</a>, or linking <a href="https://github.com/azamjonbro/azamjonbro-site">this repo</a>.
+Feel free to fork this repository and make it your own! You can use it as a starting point for your own portfolio website. However, please note that the effort and time deserves to be recognized and *plagiarism is a bad practice*. If you use this project, we would greatly appreciate it if you give credits to the designer <a href="https://github.com/umid-weeb/personal-blog" target="_blank">@umid-weeb</a> and the developer <a href="https://github.com/umid-weeb/personal-blog">@umid-we</a>, or linking <a href="https://github.com/umid-weeb/personal-blog">this repo</a>.
 
 Thanks 🤘 and enjoy it!
 

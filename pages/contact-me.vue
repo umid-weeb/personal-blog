@@ -109,8 +109,8 @@ export default {
             }
         },
         async sendMessageToTelegram() {
-        const token = 'YOUR_TELEGRAM_BOT_TOKEN';
-        const chatId = 'YOUR_CHAT_ID';
+        const token = '8160317244:AAG_DQ69HjHJgI_aTM_70TI66wj8S7wVKa4';
+        const chatId = '8160317244';
         const message = `
 <b>New Contact Form Submission</b>%0A
 👤 Name: ${this.name}%0A
