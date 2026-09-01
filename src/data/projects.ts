@@ -32,7 +32,7 @@ export const projects: Project[] = [
     description:
       'A digital platform for discovering and booking dachas and cottages. Users can explore properties, view details, check availability and make bookings.',
     technologies: ['Vue.js', 'Node.js', 'Express.js', 'MongoDB', 'PWA'],
-    image: '/projects/dacha.webp',
+    image: '/projects/turon.png',
     accent: '#6ee7a8',
   },
   {
@@ -43,7 +43,7 @@ export const projects: Project[] = [
     description:
       'A management and notification system designed to track oil-related operations and automatically handle important reminders and notifications.',
     technologies: ['Node.js', 'Express.js', 'MongoDB', 'Telegram Bot API'],
-    image: '/projects/oil.webp',
+    image: '/projects/turon.png',
     accent: '#f0b429',
   },
   {
@@ -54,7 +54,7 @@ export const projects: Project[] = [
     description:
       'A premium e-commerce experience for luxury watches, designed around high-end visual presentation, product discovery and a refined shopping experience.',
     technologies: ['Vue.js', 'Node.js', 'Express.js', 'MongoDB'],
-    image: '/projects/swisswatchpremium.webp',
+    image: '/projects/turon.png',
     url: 'https://swisswatchpremium.uz',
     domain: 'swisswatchpremium.uz',
     accent: '#c8a86b',
@@ -67,7 +67,7 @@ export const projects: Project[] = [
     description:
       'A digital platform for an education center, supporting modern educational experiences, content and student-focused digital services.',
     technologies: ['Vue.js', 'Node.js', 'MongoDB'],
-    image: '/projects/algoritmedu.webp',
+    image: '/projects/turon.png',
     url: 'https://algoritmedu.uz',
     domain: 'algoritmedu.uz',
     accent: '#4f9dff',
@@ -80,7 +80,7 @@ export const projects: Project[] = [
     description:
       'A modern educational web platform created to provide a clean digital experience for students and educational services.',
     technologies: ['Vue.js', 'Node.js', 'MongoDB'],
-    image: '/projects/oxfordedu.webp',
+    image: '/projects/turon.png',
     url: 'https://oxfordedu.uz',
     domain: 'oxfordedu.uz',
     accent: '#a78bfa',
@@ -93,7 +93,7 @@ export const projects: Project[] = [
     description:
       'A modern educational platform built to provide users with an accessible and structured digital experience.',
     technologies: ['Vue.js', 'Node.js', 'MongoDB'],
-    image: '/projects/alharameen.webp',
+    image: '/projects/turon.png',
     url: 'https://alharameen.uz',
     domain: 'alharameen.uz',
     accent: '#34d3c0',
@@ -106,7 +106,7 @@ export const projects: Project[] = [
     description:
       'A modern web experience developed for SDS Max, focused on presenting the Spring project through a clean and professional digital interface.',
     technologies: ['Vue.js', 'Node.js'],
-    image: '/projects/spring.webp',
+    image: '/projects/turon.png',
     accent: '#ff7a59',
   },
 ]

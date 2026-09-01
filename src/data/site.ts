@@ -35,7 +35,7 @@ export const contact = {
   body: 'Open for product work, client projects and long-running collaborations.',
   /* Only links that already existed in this repository. Nothing invented. */
   links: [
-    { id: 'telegram', label: 'TELEGRAM', value: '@ibroximjon', href: 'https://t.me/ibroximjon' },
+    { id: 'telegram', label: 'TELEGRAM', value: '@ibroximjon', href: 'https://t.me/pymuhandis' },
     {
       id: 'github',
       label: 'GITHUB',
