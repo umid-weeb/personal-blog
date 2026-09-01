@@ -24,9 +24,9 @@ export const statusLabel: Record<MissionStatus, string> = {
 
 export const missions: Mission[] = [
   {
-    id: 'fullstack',
+    id: 'software-engineer',
     status: 'completed',
-    title: 'Full-Stack Development',
+    title: 'Software Engineering',
     body: 'Building production websites, web applications, dashboards, APIs, booking systems, automation and business software.',
     points: [
       'Production platforms live on their own domains',
@@ -36,15 +36,15 @@ export const missions: Mission[] = [
     ],
   },
   {
-    id: 'algoritm',
+    id: 'pdpuniveristy',
     status: 'current',
-    title: 'Product Development',
-    org: 'Algoritm Education — Developer / Mentor',
+    title: 'Academic Development',
+    org: 'PDP University — Developer / Student',
     body: 'Working with educational platforms, student projects, technical architecture and software development.',
     points: [
-      'Education platform development and maintenance',
+      'Self platform development and maintenance',
       'Technical architecture, not only implementation',
-      'Mentoring students through real project work',
+      'Mentoring students that are struggling through real project work',
       'Guiding projects from an idea to something deployed',
     ],
   },

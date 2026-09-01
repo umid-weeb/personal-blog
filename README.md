@@ -1,8 +1,8 @@
-# azamjonbro.uz
+# ibroximjon.uz
 
 A developer portfolio with two front doors.
 
-**On a desktop**, `/` opens AZAMJON SPACE — a station you walk through. You
+**On a desktop**, `/` opens Ibroximjon SPACE — a station you walk through. You
 spawn on the deck and explore seven destinations on a ring around a central
 hub: About, Projects, Skills, Experience, Process, Lab and Contact. Walking
 into one lights it and offers to open it; opening it flies the camera in and
@@ -212,7 +212,7 @@ Vercel, configured in `vercel.json`:
 
 No environment variables are required.
 
-### Choosing between `azamjonbro.uz` and `www`
+### Choosing between `ibroximjon.uz` and `www`
 
 **Do this in Vercel's dashboard — Settings → Domains — not in `vercel.json`.**
 

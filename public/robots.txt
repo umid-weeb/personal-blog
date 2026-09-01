@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://azamjonbro.uz/sitemap.xml
+Sitemap: https://ibroximjon.uz/sitemap.xml

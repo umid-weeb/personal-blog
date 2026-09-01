@@ -1,14 +1,16 @@
 {
-  "name": "azamjonbro",
+  "name": "ibroximjon",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "oxlint",
-    "preview": "vite preview"
-  },
+ "scripts": {
+  "dev": "vite",
+  "build": "tsc -b && vite build",
+  "preview": "vite preview",
+  "lint": "oxlint",
+  "nodemon-dev": "nodemon --exec \"vite\" --watch src"
+}
+,
   "dependencies": {
     "@react-three/drei": "^10.7.8",
     "@react-three/fiber": "^9.7.0",
@@ -26,6 +28,7 @@
     "@types/three": "^0.185.4",
     "@vitejs/plugin-react": "^6.0.4",
     "marked": "^18.0.11",
+    "nodemon": "^3.1.14",
     "oxlint": "^1.75.0",
     "tailwindcss": "^4.3.3",
     "typescript": "~6.0.2",

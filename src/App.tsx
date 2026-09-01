@@ -92,7 +92,7 @@ function useDocumentTitle(pathname: string, slug: string | null) {
       : pathname === routes.blog
         ? `Lab — ${site.title}`
         : pathname === routes.world
-          ? `Azamjon Space — ${site.person}`
+          ? `Ibroximjon Space — ${site.person}`
           : site.title
   }, [pathname, slug])
 }

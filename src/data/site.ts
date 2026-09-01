@@ -1,19 +1,19 @@
 /** Identity and copy. No component hard-codes a word of this. */
 
 export const site = {
-  name: 'AZAMJONBRO',
-  person: 'Azamjon',
-  role: 'Full-Stack Developer',
-  domain: 'azamjonbro.uz',
-  origin: 'https://azamjonbro.uz',
-  title: 'Azamjon — Full-Stack Developer',
+  name: 'IBROXIMJON',
+  person: 'Ibroximjon Isroilov',
+  role: 'Software Engineer',
+  domain: 'ibroximjon.uz',
+  origin: 'https://ibroximjon.uz',
+  title: 'Ibroximjon — Software Engineer',
   description:
-    'Azamjon is a full-stack developer building digital products, web applications, systems, APIs, automation and interactive experiences. Explore the work as a 3D space station.',
+    'Ibroximjon Isroilov is a software engineer and AI/Ml engineer, systems, APIs, automation and interactive experiences. Explore the work as a 3D space station.',
 } as const
 
 export const about = {
-  heading: 'AZAMJON',
-  role: 'Full-Stack Developer',
+  heading: 'IBROXIMJON',
+  role: 'Software Engineer',
   statement:
     'I build digital products, web applications, systems and interactive experiences.',
   body: 'I work across frontend, backend, databases, APIs, infrastructure, automation and AI integrations.',
@@ -35,14 +35,14 @@ export const contact = {
   body: 'Open for product work, client projects and long-running collaborations.',
   /* Only links that already existed in this repository. Nothing invented. */
   links: [
-    { id: 'telegram', label: 'TELEGRAM', value: '@azamjonbro', href: 'https://t.me/azamjonbro' },
+    { id: 'telegram', label: 'TELEGRAM', value: '@ibroximjon', href: 'https://t.me/ibroximjon' },
     {
       id: 'github',
       label: 'GITHUB',
-      value: 'github.com/azamjonbro',
-      href: 'https://github.com/azamjonbro',
+      value: 'github.com/umid-weeb',
+      href: 'https://github.com/umid-weeb',
     },
-    { id: 'web', label: 'WEB', value: 'azamjonbro.uz', href: 'https://azamjonbro.uz' },
+    { id: 'web', label: 'WEB', value: 'ibroximjon.uz', href: 'https://ibroximjon.uz' },
   ],
 } as const
 
