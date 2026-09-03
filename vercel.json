@@ -4,7 +4,7 @@
   "outputDirectory": "dist",
   "framework": "vite",
 
-  "rewrites": [{ "source": "/((?!api/).*)", "destination": "/index.html" }],
+  "rewrites": [{ "source": "/((?!api/|projects/|fonts/|assets/).*)", "destination": "/index.html" }],
 
   "headers": [
     {
