@@ -1,27 +1,17 @@
 # Project screenshots
 
-Every file here is a **generated placeholder plate**, not a real screenshot —
-a designed card carrying the project's number, category, name and domain, so
-the site looks finished today.
+These are the screenshots currently used by the project catalog.
 
-## Replacing one
-
-Overwrite the file. Nothing else changes — no code edit, no config.
-
-| File                     | Project             | Live site            |
-| ------------------------ | ------------------- | -------------------- |
-| `dacha.webp`             | Dacha               | —                    |
-| `oil.webp`               | Oil                 | —                    |
-| `swisswatchpremium.webp` | Swiss Watch Premium | swisswatchpremium.uz |
-| `algoritmedu.webp`       | Algoritm Education  | algoritmedu.uz       |
-| `oxfordedu.webp`         | Oxford Education    | oxfordedu.uz         |
-| `alharameen.webp`        | Al-Harameen         | alharameen.uz        |
-| `spring.webp`            | Spring / SDS Max    | —                    |
+| File                   | Project      | Live site       |
+| ---------------------- | ------------ | --------------- |
+| `turon.png`            | Turon Kafesi | —               |
+| `pyzone.png`            | Pyzone.uz    | pyzone.uz       |
+| `pyzone-zone.png`       | Pyzone Zone  | pyzone.uz/zone  |
 
 ## What the file should be
 
-- **Format:** WebP. Keep the `.webp` extension — the paths are referenced from
-  `src/data/projects.ts`.
+- **Format:** PNG. Keep the filename and extension — the paths are referenced
+  from `src/data/projects.ts`.
 - **Aspect ratio:** 16:10. The placeholders are 1760 × 1100. The exhibit
   hologram in the world uses a 16:10 plane, so a very different ratio will
   letterbox there.
@@ -31,7 +21,7 @@ Overwrite the file. Nothing else changes — no code edit, no config.
 Producing one from a screenshot:
 
 ```bash
-cwebp -q 82 -resize 1760 0 screenshot.png -o public/projects/dacha.webp
+cp screenshot.png public/projects/turon.png
 ```
 
 ## Adding an eighth project
