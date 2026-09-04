@@ -37,6 +37,82 @@
   animation: boot-drift 22s linear infinite;
 }
 
+.language-switcher {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 1;
+}
+
+.language-trigger {
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  gap: 1px;
+  padding: 8px;
+  color: var(--text-2);
+  border: 1px solid var(--line-soft);
+  border-radius: 50%;
+  background: rgba(4, 5, 10, 0.58);
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  transition: color 0.3s var(--snap), border-color 0.3s var(--snap), transform 0.3s var(--snap);
+}
+
+.language-trigger:hover,
+.language-trigger[aria-expanded='true'] {
+  color: var(--cyan);
+  border-color: var(--line-strong);
+  transform: translateY(-2px);
+}
+
+.language-globe {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1;
+}
+
+.language-menu {
+  position: absolute;
+  top: 68px;
+  right: 0;
+  min-width: 148px;
+  padding: 5px;
+  border: 1px solid var(--line-soft);
+  background: rgba(6, 9, 16, 0.96);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.35);
+}
+
+.language-menu button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 9px 10px;
+  color: var(--text-2);
+  font-family: var(--mono);
+  font-size: 10px;
+  text-align: left;
+  letter-spacing: 0.05em;
+}
+
+.language-menu button:hover,
+.language-menu button.is-selected {
+  color: var(--text);
+  background: var(--raise-2);
+}
+
+.language-menu small {
+  color: var(--text-3);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+}
+
 @keyframes boot-drift {
   to { background-position: 62px 62px; }
 }

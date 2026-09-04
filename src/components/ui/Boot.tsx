@@ -3,13 +3,7 @@ import { site } from '@/data/site'
 import { routes } from '@/lib/router'
 import { Link } from '@/components/site/Link'
 import { useWorld } from '@/state/WorldContext'
-
-const SEQUENCE = [
-  'ESTABLISHING UPLINK',
-  'BUILDING STATION GEOMETRY',
-  'CALIBRATING OPTICS',
-  'SYNCHRONISING EXHIBITS',
-]
+import { useLanguage, type Language } from '@/state/LanguageContext'
 
 /**
  * The cinematic opening, and the gesture that starts the audio context.
@@ -20,7 +14,9 @@ const SEQUENCE = [
  */
 export function Boot() {
   const { stage, progress, enter, isTouch } = useWorld()
+  const { language, setLanguage, copy } = useLanguage()
   const [gone, setGone] = useState(false)
+  const [languageOpen, setLanguageOpen] = useState(false)
 
   useEffect(() => {
     if (stage !== 'entered') return
@@ -42,11 +38,49 @@ export function Boot() {
     >
       <div className="boot-grid" aria-hidden />
 
+      <div className="language-switcher">
+        <button
+          type="button"
+          className="language-trigger"
+          aria-expanded={languageOpen}
+          aria-controls="language-options"
+          aria-label={copy.languageLabel}
+          onClick={() => setLanguageOpen((open) => !open)}
+        >
+          <svg className="language-globe" viewBox="0 0 24 24" aria-hidden>
+            <circle cx="12" cy="12" r="8.5" />
+            <path d="M3.8 12h16.4M12 3.5c2.2 2.3 3.2 5.1 3.2 8.5s-1 6.2-3.2 8.5M12 3.5C9.8 5.8 8.8 8.6 8.8 12s1 6.2 3.2 8.5" />
+          </svg>
+          <span>{language.toUpperCase()}</span>
+        </button>
+
+        {languageOpen && (
+          <div id="language-options" className="language-menu" role="menu" aria-label={copy.languageLabel}>
+            {(['en', 'uz', 'ru'] as Language[]).map((option) => (
+              <button
+                key={option}
+                type="button"
+                className={language === option ? 'is-selected' : ''}
+                role="menuitemradio"
+                aria-checked={language === option}
+                onClick={() => {
+                  setLanguage(option)
+                  setLanguageOpen(false)
+                }}
+              >
+                <span>{option === 'en' ? 'English' : option === 'uz' ? 'O‘zbekcha' : 'Русский'}</span>
+                {option !== 'en' && <small>{copy.beta}</small>}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+
       <div className="boot-inner">
         <p className="boot-mark">{site.name}</p>
 
         <p className="boot-status">
-          {ready ? 'SYSTEM READY' : 'INITIALIZING DIGITAL SPACE…'}
+          {ready ? copy.ready : copy.initializing}
         </p>
 
         <div className="boot-bar" aria-hidden>
@@ -59,8 +93,8 @@ export function Boot() {
         </p>
 
         <ul className="boot-steps" aria-hidden>
-          {SEQUENCE.map((step, i) => {
-            const done = shown >= ((i + 1) / SEQUENCE.length) * 100
+          {copy.steps.map((step, i) => {
+            const done = shown >= ((i + 1) / copy.steps.length) * 100
             return (
               <li key={step} className={done ? 'is-done' : ''}>
                 <span>{done ? '✓' : '·'}</span>
@@ -77,14 +111,14 @@ export function Boot() {
             onClick={enter}
             disabled={!ready}
           >
-            <span>{isTouch ? 'START THE DEMO' : 'ENTER THE WORLD'}</span>
+            <span>{isTouch ? copy.startDemo : copy.enterWorld}</span>
             <svg width="16" height="12" viewBox="0 0 16 12" aria-hidden>
               <path d="M1 6h13M9 1l5 5-5 5" stroke="currentColor" strokeWidth="1.5" fill="none" />
             </svg>
           </button>
 
           <Link className="boot-read" to={routes.home}>
-            ← PORTFOLIO
+            {copy.portfolio}
           </Link>
         </div>
 

@@ -12,6 +12,7 @@ import { ZonePanel } from '@/components/ui/Panels'
 import { ProjectPanel } from '@/components/ui/ProjectPanel'
 import { getArticle } from '@/data/lab'
 import { site } from '@/data/site'
+import { LanguageProvider } from '@/state/LanguageContext'
 import '@/styles/ui.css'
 
 /**
@@ -99,8 +100,10 @@ function useDocumentTitle(pathname: string, slug: string | null) {
 
 export default function App() {
   return (
-    <WorldProvider>
-      <Routes />
-    </WorldProvider>
+    <LanguageProvider>
+      <WorldProvider>
+        <Routes />
+      </WorldProvider>
+    </LanguageProvider>
   )
 }
