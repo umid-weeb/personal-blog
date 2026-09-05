@@ -7,6 +7,7 @@ import { articles } from '@/data/lab'
 import { routes } from '@/lib/router'
 import { Link } from './Link'
 import { SiteHeader, SiteFooter } from './Chrome'
+import { useLanguage } from '@/state/LanguageContext'
 
 /**
  * The portfolio as a page.
@@ -18,6 +19,7 @@ import { SiteHeader, SiteFooter } from './Chrome'
  * demo.
  */
 export function Landing({ canEnterWorld }: { canEnterWorld: boolean }) {
+  const { copy, t } = useLanguage()
   return (
     <div className="page">
       <SiteHeader canEnterWorld={canEnterWorld} />
@@ -31,8 +33,8 @@ export function Landing({ canEnterWorld }: { canEnterWorld: boolean }) {
           </p>
 
           <h1 className="hero-title">{about.heading}</h1>
-          <p className="hero-statement">{about.statement}</p>
-          <p className="hero-body">{about.body}</p>
+          <p className="hero-statement">{t('about:statement', about.statement)}</p>
+          <p className="hero-body">{t('about:body', about.body)}</p>
 
           <ul className="hero-tags">
             {about.disciplines.map((d) => (
@@ -42,11 +44,11 @@ export function Landing({ canEnterWorld }: { canEnterWorld: boolean }) {
 
           <div className="hero-cta">
             <a className="btn btn--primary" href="#projects">
-              VIEW THE WORK
+              {copy.viewWork}
             </a>
             {canEnterWorld && (
               <Link className="btn" to={routes.world}>
-                ENTER 3D DEMO →
+                {copy.demoTour} →
               </Link>
             )}
           </div>
@@ -54,7 +56,7 @@ export function Landing({ canEnterWorld }: { canEnterWorld: boolean }) {
           <p className="hero-closing">
             {about.closing.map((line, i) => (
               <span key={line} className={i === 1 ? 'is-strong' : undefined}>
-                {line}
+                {t(`about:closing${i}`, line)}
               </span>
             ))}
           </p>
@@ -62,8 +64,8 @@ export function Landing({ canEnterWorld }: { canEnterWorld: boolean }) {
 
         {/* ── PROJECTS ─────────────────────────────────────────── */}
         <section id="projects" className="block">
-          <Heading index="01" label="Selected work">
-            Things I built, and still maintain.
+          <Heading index="01" label={copy.selectedWork}>
+            {copy.selectedWorkLead}
           </Heading>
 
           <div className="cards">
@@ -76,7 +78,7 @@ export function Landing({ canEnterWorld }: { canEnterWorld: boolean }) {
                 <div className="card-shot">
                   <img
                     src={project.image}
-                    alt={`${project.name} — ${project.category}`}
+                    alt={`${project.name} — ${t(`project:${project.id}:category`, project.category)}`}
                     width={1760}
                     height={1100}
                     loading="lazy"
@@ -87,11 +89,11 @@ export function Landing({ canEnterWorld }: { canEnterWorld: boolean }) {
                 <div className="card-body">
                   <p className="card-meta">
                     <span className="card-index">{project.index}</span>
-                    {project.category}
+                    {t(`project:${project.id}:category`, project.category)}
                   </p>
 
                   <h3 className="card-title">{project.name}</h3>
-                  <p className="card-desc">{project.description}</p>
+                  <p className="card-desc">{t(`project:${project.id}:description`, project.description)}</p>
 
                   <ul className="chips">
                     {project.technologies.map((tech) => (
@@ -106,13 +108,13 @@ export function Landing({ canEnterWorld }: { canEnterWorld: boolean }) {
                       target="_blank"
                       rel="noreferrer noopener"
                     >
-                      VIEW LIVE PROJECT
+                      {copy.viewLiveProject}
                       <svg width="11" height="11" viewBox="0 0 12 12" aria-hidden>
                         <path d="M1 11L11 1M4 1h7v7" stroke="currentColor" strokeWidth="1.5" fill="none" />
                       </svg>
                     </a>
                   ) : (
-                    <p className="card-private">NO PUBLIC DEPLOYMENT</p>
+                    <p className="card-private">{copy.noPublicDeployment}</p>
                   )}
                 </div>
               </article>
@@ -122,8 +124,8 @@ export function Landing({ canEnterWorld }: { canEnterWorld: boolean }) {
 
         {/* ── SKILLS ───────────────────────────────────────────── */}
         <section id="skills" className="block">
-          <Heading index="02" label="Stack">
-            What I build with.
+          <Heading index="02" label={copy.stack}>
+            {copy.stackLead}
           </Heading>
 
           <div className="stack">
@@ -145,8 +147,8 @@ export function Landing({ canEnterWorld }: { canEnterWorld: boolean }) {
 
         {/* ── EXPERIENCE ───────────────────────────────────────── */}
         <section id="experience" className="block">
-          <Heading index="03" label="Mission log">
-            Where the work happened.
+          <Heading index="03" label={copy.missionLog}>
+            {copy.missionLead}
           </Heading>
 
           <ol className="log">
@@ -168,8 +170,8 @@ export function Landing({ canEnterWorld }: { canEnterWorld: boolean }) {
 
         {/* ── PROCESS ──────────────────────────────────────────── */}
         <section id="process" className="block">
-          <Heading index="04" label="How I work">
-            From idea to production.
+          <Heading index="04" label={copy.process}>
+            {copy.processLead}
           </Heading>
 
           <ol className="process-list">
@@ -187,8 +189,8 @@ export function Landing({ canEnterWorld }: { canEnterWorld: boolean }) {
 
         {/* ── LAB ──────────────────────────────────────────────── */}
         <section id="lab" className="block">
-          <Heading index="05" label={lab.caption}>
-            {lab.title}
+          <Heading index="05" label={copy.fieldNotes}>
+            {copy.lab}
           </Heading>
 
           <p className="block-lead">{lab.body}</p>
@@ -211,14 +213,14 @@ export function Landing({ canEnterWorld }: { canEnterWorld: boolean }) {
                           {entry.meta.status === 'draft' && <span className="note-draft">DRAFT</span>}
                         </span>
                       </span>
-                      <span className="note-go" aria-hidden>READ →</span>
+                      <span className="note-go" aria-hidden>{copy.read} →</span>
                     </Link>
                   </li>
                 ))}
               </ol>
 
               <Link className="btn block-more" to={routes.blog}>
-                ALL {articles.length} NOTES →
+                {copy.viewAllNotes} →
               </Link>
             </>
           )}
@@ -226,7 +228,7 @@ export function Landing({ canEnterWorld }: { canEnterWorld: boolean }) {
 
         {/* ── CONTACT ──────────────────────────────────────────── */}
         <section id="contact" className="block">
-          <Heading index="06" label="Uplink">
+          <Heading index="06" label={copy.contact}>
             {contact.heading}
             <br />
             <span className="is-accent">{contact.sub}</span>

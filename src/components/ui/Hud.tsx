@@ -5,6 +5,7 @@ import { site } from '@/data/site'
 import { routes } from '@/lib/router'
 import { Link } from '@/components/site/Link'
 import { useWorld } from '@/state/WorldContext'
+import { useLanguage } from '@/state/LanguageContext'
 
 /**
  * The 2D layer over the world.
@@ -14,6 +15,7 @@ import { useWorld } from '@/state/WorldContext'
  * except the wordmark and the two controls in the corner.
  */
 export function Hud() {
+  const { copy } = useLanguage()
   const {
     stage, nearZone, nearProject, openZone, openProject,
     openPanel, showProject, hintSeen, isTouch, audioOn, toggleAudio,
@@ -45,7 +47,7 @@ export function Hud() {
       <div className={`hud-tools${overlayOpen ? ' is-hidden' : ''}`}>
         <Link className="hud-btn" to={routes.home}>
           <span aria-hidden>←</span>
-          <span className="hud-btn__label">PORTFOLIO</span>
+          <span className="hud-btn__label">{copy.portfolio.replace('← ', '')}</span>
         </Link>
 
         <button
@@ -54,9 +56,9 @@ export function Hud() {
           onClick={toggleAudio}
           aria-pressed={audioOn}
         >
-          <span className="sr-only">{audioOn ? 'Mute ambience' : 'Enable ambience'}</span>
+          <span className="sr-only">{audioOn ? copy.muteAmbience : copy.enableAmbience}</span>
           <span aria-hidden>{audioOn ? '◉' : '◎'}</span>
-          <span className="hud-btn__label" aria-hidden>SOUND</span>
+          <span className="hud-btn__label" aria-hidden>{copy.sound}</span>
         </button>
       </div>
 
@@ -80,6 +82,7 @@ function Prompt({
   isTouch: boolean
   hidden: boolean
 }) {
+  const { copy } = useLanguage()
   const visible = Boolean(target) && !hidden
 
   return (
@@ -99,11 +102,11 @@ function Prompt({
         aria-hidden={!visible}
       >
         {isTouch ? (
-          <span>TAP TO EXPLORE</span>
+          <span>{copy.tapToExplore}</span>
         ) : (
           <>
             <kbd>E</kbd>
-            <span>INTERACT</span>
+            <span>{copy.interact}</span>
           </>
         )}
       </button>
@@ -114,6 +117,7 @@ function Prompt({
 /* ─── CONTROLS HINT ───────────────────────────────────────────── */
 
 function ControlsHint({ isTouch }: { isTouch: boolean }) {
+  const { copy } = useLanguage()
   const [shown, setShown] = useState(false)
 
   useEffect(() => {
@@ -125,15 +129,15 @@ function ControlsHint({ isTouch }: { isTouch: boolean }) {
     <div className={`hint${shown ? ' is-visible' : ''}`}>
       {isTouch ? (
         <>
-          <span><b>DRAG</b> MOVE</span>
-          <span><b>SWIPE</b> LOOK</span>
-          <span><b>TAP</b> INTERACT</span>
+          <span>{copy.dragMove}</span>
+          <span>{copy.swipeLook}</span>
+          <span>{copy.tapInteract}</span>
         </>
       ) : (
         <>
-          <span><b>W A S D</b> MOVE</span>
-          <span><b>DRAG</b> LOOK</span>
-          <span><b>E</b> INTERACT</span>
+          <span>{copy.keyboardMove}</span>
+          <span>{copy.keyboardLook}</span>
+          <span><b>E</b> {copy.interact}</span>
         </>
       )}
     </div>
@@ -145,6 +149,7 @@ function ControlsHint({ isTouch }: { isTouch: boolean }) {
 /** Which destinations exist, and which one you are standing in. */
 function Compass({ hidden }: { hidden: boolean }) {
   const { nearZone, openPanel } = useWorld()
+  const { t } = useLanguage()
 
   return (
     <nav className={`compass${hidden ? ' is-hidden' : ''}`} aria-label="Destinations">
@@ -157,7 +162,7 @@ function Compass({ hidden }: { hidden: boolean }) {
           onClick={() => openPanel(zone.id)}
         >
           <span className="compass-dot" aria-hidden />
-          <span className="compass-label">{zone.label}</span>
+          <span className="compass-label">{t(`zone:${zone.id}:label`, zone.label)}</span>
         </button>
       ))}
     </nav>

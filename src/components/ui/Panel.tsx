@@ -1,4 +1,5 @@
 import { useEffect, useRef, type ReactNode } from 'react'
+import { useLanguage } from '@/state/LanguageContext'
 
 /**
  * The shell every destination's content opens inside.
@@ -22,6 +23,7 @@ export function Panel({
   children: ReactNode
   wide?: boolean
 }) {
+  const { copy } = useLanguage()
   const sheet = useRef<HTMLDivElement>(null)
   const closer = useRef<HTMLButtonElement>(null)
 
@@ -78,7 +80,7 @@ export function Panel({
         </header>
 
         <button type="button" className="panel-close" onClick={onClose} ref={closer}>
-          <span className="sr-only">Close</span>
+          <span className="sr-only">{copy.close}</span>
           <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden>
             <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.5" fill="none" />
           </svg>

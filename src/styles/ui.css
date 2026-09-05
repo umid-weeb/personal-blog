@@ -44,6 +44,20 @@
   z-index: 1;
 }
 
+.language-switcher--site {
+  position: relative;
+  top: auto;
+  right: auto;
+}
+
+.language-switcher--site .language-menu {
+  display: none;
+}
+
+.language-switcher--site .language-menu.is-open {
+  display: block;
+}
+
 .language-trigger {
   width: 60px;
   height: 60px;

@@ -8,9 +8,11 @@ import { getZone, type ZoneId } from '@/data/zones'
 import { useWorld } from '@/state/WorldContext'
 import { Panel } from './Panel'
 import { LabPanel } from './lab/LabPanel'
+import { useLanguage } from '@/state/LanguageContext'
 
 /** Routes the open zone to its content. */
 export function ZonePanel() {
+  const { t } = useLanguage()
   const { openZone, closePanel } = useWorld()
   if (!openZone) return null
 
@@ -28,8 +30,8 @@ export function ZonePanel() {
 
   return (
     <Panel
-      eyebrow={zone.caption}
-      title={zone.label}
+      eyebrow={t(`zone:${zone.id}:caption`, zone.caption)}
+      title={t(`zone:${zone.id}:label`, zone.label)}
       accent={zone.accent}
       onClose={closePanel}
       wide={openZone === 'projects' || openZone === 'skills' || openZone === 'lab'}
@@ -42,13 +44,14 @@ export function ZonePanel() {
 /* ─── ABOUT ───────────────────────────────────────────────────── */
 
 function AboutBody() {
+  const { t } = useLanguage()
   return (
     <div className="about">
       <p className="about-name">{about.heading}</p>
       <p className="about-role">{about.role}</p>
 
-      <p className="about-statement">{about.statement}</p>
-      <p className="about-body">{about.body}</p>
+      <p className="about-statement">{t('about:statement', about.statement)}</p>
+      <p className="about-body">{t('about:body', about.body)}</p>
 
       <ul className="about-disciplines">
         {about.disciplines.map((d) => (
@@ -59,7 +62,7 @@ function AboutBody() {
       <div className="about-closing">
         {about.closing.map((line, i) => (
           <p key={line} className={i === 1 ? 'is-strong' : undefined}>
-            {line}
+            {t(`about:closing${i}`, line)}
           </p>
         ))}
       </div>
@@ -71,12 +74,13 @@ function AboutBody() {
 
 /** The bay directory — every exhibit, openable without walking to it. */
 function ProjectsBody() {
+  const { copy, t } = useLanguage()
   const { showProject } = useWorld()
 
   return (
     <div className="bay">
       <p className="panel-lead">
-        Seven exhibits. Walk the bay, or open one from here.
+        {copy.selectedWorkLead}
       </p>
 
       <ul className="bay-list">
@@ -86,9 +90,9 @@ function ProjectsBody() {
               <span className="bay-index">{project.index}</span>
               <span className="bay-main">
                 <span className="bay-name">{project.name}</span>
-                <span className="bay-category">{project.category}</span>
+                <span className="bay-category">{t(`project:${project.id}:category`, project.category)}</span>
               </span>
-              <span className="bay-go" aria-hidden>OPEN →</span>
+              <span className="bay-go" aria-hidden>{copy.open} →</span>
             </button>
           </li>
         ))}
@@ -100,6 +104,7 @@ function ProjectsBody() {
 /* ─── SKILLS ──────────────────────────────────────────────────── */
 
 function SkillsBody() {
+  const { copy } = useLanguage()
   const [selected, setSelected] = useState(skillGroups[0].id)
   const group = skillGroups.find((g) => g.id === selected) ?? skillGroups[0]
   const [focus, setFocus] = useState<string | null>(null)
@@ -107,7 +112,7 @@ function SkillsBody() {
 
   return (
     <div className="skills">
-      <div className="skills-tabs" role="tablist" aria-label="Skill categories">
+      <div className="skills-tabs" role="tablist" aria-label={copy.stack}>
         {skillGroups.map((g) => (
           <button
             key={g.id}
@@ -145,7 +150,7 @@ function SkillsBody() {
       </ul>
 
       <p className="skills-detail" aria-live="polite">
-        {detail ? detail.context : 'Select a technology.'}
+        {detail ? detail.context : copy.selectTechnology}
       </p>
     </div>
   )
@@ -176,9 +181,10 @@ function ExperienceBody() {
 /* ─── PROCESS ─────────────────────────────────────────────────── */
 
 function ProcessBody() {
+  const { copy } = useLanguage()
   return (
     <div className="process">
-      <p className="panel-lead">From idea to production.</p>
+      <p className="panel-lead">{copy.processLead}</p>
       <ol className="process-list">
         {processSteps.map((step) => (
           <li key={step.n}>

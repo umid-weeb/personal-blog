@@ -3,20 +3,22 @@ import { lab } from '@/data/site'
 import { routes } from '@/lib/router'
 import { Link } from './Link'
 import { SiteHeader, SiteFooter } from './Chrome'
+import { useLanguage } from '@/state/LanguageContext'
 
 /** `/blog` — every write-up. */
 export function BlogIndex() {
+  const { copy } = useLanguage()
   return (
     <div className="page page--narrow">
-      <SiteHeader back={{ to: routes.home, label: '← PORTFOLIO' }} />
+      <SiteHeader back={{ to: routes.home, label: copy.portfolio }} />
 
       <main>
         <header className="block-head">
           <p className="block-eyebrow">
             <span className="block-eyebrow__rule" aria-hidden />
-            {lab.caption}
+            {copy.fieldNotes}
           </p>
-          <h1 className="block-title">{lab.title}</h1>
+          <h1 className="block-title">{copy.lab}</h1>
         </header>
 
         <p className="block-lead">{lab.body}</p>
@@ -38,7 +40,7 @@ export function BlogIndex() {
                       {entry.meta.status === 'draft' && <span className="note-draft">DRAFT</span>}
                     </span>
                   </span>
-                  <span className="note-go" aria-hidden>READ →</span>
+                  <span className="note-go" aria-hidden>{copy.read} →</span>
                 </Link>
               </li>
             ))}
@@ -53,19 +55,20 @@ export function BlogIndex() {
 
 /** `/blog/:slug` — one write-up. */
 export function BlogArticle({ slug }: { slug: string }) {
+  const { copy } = useLanguage()
   const article = getArticle(slug)
 
   if (!article) {
     return (
       <div className="page page--narrow">
-        <SiteHeader back={{ to: routes.blog, label: '← ALL NOTES' }} />
+        <SiteHeader back={{ to: routes.blog, label: `← ${copy.viewAllNotes}` }} />
         <main>
-          <h1 className="block-title">Not found</h1>
+          <h1 className="block-title">{copy.noPublicDeployment}</h1>
           <p className="block-lead">
             There is no note at that address. It may have been renamed.
           </p>
           <Link className="btn" to={routes.blog}>
-            ALL NOTES →
+            {copy.viewAllNotes} →
           </Link>
         </main>
         <SiteFooter />
@@ -78,14 +81,14 @@ export function BlogArticle({ slug }: { slug: string }) {
 
   return (
     <div className="page page--narrow">
-      <SiteHeader back={{ to: routes.blog, label: '← ALL NOTES' }} />
+      <SiteHeader back={{ to: routes.blog, label: `← ${copy.viewAllNotes}` }} />
 
       <main>
         <article>
           <header className="reader-head">
             <p className="reader-meta">
               {article.meta.project && <span>{article.meta.project}</span>}
-              <span>{article.meta.minutes} MIN READ</span>
+              <span>{article.meta.minutes} MIN {copy.read}</span>
               {article.meta.status === 'draft' && <span className="reader-draft">DRAFT</span>}
             </p>
             <h1 className="reader-title">{article.meta.title}</h1>
@@ -100,13 +103,13 @@ export function BlogArticle({ slug }: { slug: string }) {
         <nav className="reader-next" aria-label="More notes">
           {next ? (
             <Link className="next-note" to={routes.article(next.meta.slug)}>
-              <span className="next-note__k">NEXT</span>
+              <span className="next-note__k">{copy.next}</span>
               <span className="next-note__v">{next.meta.title}</span>
               <span aria-hidden>→</span>
             </Link>
           ) : (
             <Link className="btn" to={routes.blog}>
-              ALL NOTES →
+              {copy.viewAllNotes} →
             </Link>
           )}
         </nav>

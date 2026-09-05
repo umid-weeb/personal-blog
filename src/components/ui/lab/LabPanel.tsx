@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { articles, getArticle } from '@/data/lab'
 import { lab } from '@/data/site'
+import { useLanguage } from '@/state/LanguageContext'
 
 /**
  * The lab: an index of write-ups, and a reader.
@@ -11,6 +12,7 @@ import { lab } from '@/data/site'
  * readable and there is exactly one thing to look at.
  */
 export function LabPanel() {
+  const { copy } = useLanguage()
   const [open, setOpen] = useState<string | null>(null)
   const scroller = useRef<HTMLDivElement>(null)
   const article = open ? getArticle(open) : undefined
@@ -35,13 +37,13 @@ export function LabPanel() {
     return (
       <div className="reader" ref={scroller}>
         <button type="button" className="reader-back" onClick={() => setOpen(null)}>
-          ← ALL NOTES
+          ← {copy.viewAllNotes}
         </button>
 
         <header className="reader-head">
           <p className="reader-meta">
             {article.meta.project && <span>{article.meta.project}</span>}
-            <span>{article.meta.minutes} MIN READ</span>
+            <span>{article.meta.minutes} MIN {copy.read}</span>
             {article.meta.status === 'draft' && <span className="reader-draft">DRAFT</span>}
           </p>
           <h3 className="reader-title">{article.meta.title}</h3>
@@ -53,7 +55,7 @@ export function LabPanel() {
 
         <footer className="reader-foot">
           <button type="button" className="btn" onClick={() => setOpen(null)}>
-            BACK TO THE LAB
+            {copy.backToLab}
           </button>
         </footer>
       </div>
@@ -81,7 +83,7 @@ export function LabPanel() {
                 </span>
               </span>
 
-              <span className="note-go" aria-hidden>READ →</span>
+              <span className="note-go" aria-hidden>{copy.read} →</span>
             </button>
           </li>
         ))}
