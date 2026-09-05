@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, type ReactNode } from 'react'
+import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
 
 export type Language = 'en' | 'uz' | 'ru'
 
@@ -128,7 +128,15 @@ const LanguageContext = createContext<{
 })
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('en')
+  const [language, setLanguage] = useState<Language>(() => {
+    if (typeof window === 'undefined') return 'en'
+    const saved = window.localStorage.getItem('site-language')
+    return saved === 'uz' || saved === 'ru' ? saved : 'en'
+  })
+
+  useEffect(() => {
+    window.localStorage.setItem('site-language', language)
+  }, [language])
 
   const t = (key: string, fallback = key) => content[key]?.[language] ?? fallback
 
